@@ -1,6 +1,6 @@
 {% extends "_layout" %} {% block content %}
 
-{% set blogArticles = craft.entries.section('blogArticles').all() %}
+{% set news = craft.entries.section('news').all() %}
 
 <main class="container">
 	<center>
@@ -8,7 +8,7 @@
 	</center>
 
 	<div class="articles">
-		{% for article in blogArticles %}
+		{% for article in news %}
 			{% include "_includes/_blog_article" with { article: article } %}
 		{% endfor %}
 	</div>
