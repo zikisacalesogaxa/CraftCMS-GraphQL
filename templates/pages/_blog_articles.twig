@@ -1,0 +1,17 @@
+{% extends "_layout" %} {% block content %}
+
+{% set blogArticles = craft.entries.section('blogArticles').all() %}
+
+<main class="container">
+	<center>
+		<h1>Articles</h1>
+	</center>
+
+	<div class="articles">
+		{% for article in blogArticles %}
+			{% include "_includes/_blog_article" with { article: article } %}
+		{% endfor %}
+	</div>
+</main>
+
+{% endblock %}
